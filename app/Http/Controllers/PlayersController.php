@@ -13,7 +13,9 @@ class PlayersController extends Controller
         return response()->json([
             'message' => 'Players got successfully',
             'data' => $players
-        ], 200);
+        ], 200)
+        ->header('Content-Type', 'application/json')
+        ->header('Access-Control-Allow-Origin', '*');
     }
 
     public function putPlayer(Request $request)

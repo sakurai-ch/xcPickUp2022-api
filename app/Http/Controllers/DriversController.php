@@ -13,7 +13,9 @@ class DriversController extends Controller
         return response()->json([
             'message' => 'Drivers got successfully',
             'data' => $drivers
-        ], 200);
+        ], 200)
+        ->header('Content-Type', 'application/json')
+        ->header('Access-Control-Allow-Origin', '*');
     }
 
     public function postDriver(Request $request)
