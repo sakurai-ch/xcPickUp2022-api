@@ -15,6 +15,11 @@ class Player extends Model
         return $players;
     }
 
+    public static function getSortedPlayers() {
+        $sortedPlayers = Player::orderBy('order', 'asc')->get();
+        return $sortedPlayers;
+    }
+
     public static function putPlayer(Request $request) {
         $TOLat = 36.276836;
         $TOLng = 140.145818;

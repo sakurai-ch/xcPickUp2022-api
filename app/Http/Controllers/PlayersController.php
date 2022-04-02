@@ -9,7 +9,12 @@ class PlayersController extends Controller
 {
     public function getPlayers(Request $request)
     {
-        $players = Player::getPlayers();
+        $players = [];
+        if($request->sort == "order") {
+            $players = Player::getSortedPlayers();
+        }else{
+            $players = Player::getPlayers();
+        }
         return response()->json([
             'message' => 'Players got successfully',
             'data' => $players
