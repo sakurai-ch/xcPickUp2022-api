@@ -31,8 +31,10 @@ class Player extends Model
         if($request->driver != NULL && $request->driver != $currPlayer->driver) {
             $params['driver'] = $request->driver;
         }
-
-        if($request->order != NULL && $request->order != $currPlayer->order) {
+        
+        if($request->order == "") {
+            $params['order'] = NULL;
+        }elseif($request->order != NULL && $request->order != $currPlayer->order) {
             $params['order'] = $request->order;
         }
 
