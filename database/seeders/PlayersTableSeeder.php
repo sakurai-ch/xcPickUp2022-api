@@ -79,6 +79,7 @@ class PlayersTableSeeder extends Seeder
             $param['state'] = '---';
             $param['map'] = '';
             $param['driver'] = '---';
+            // $param['order'] = NULL;
             
             // $param['latitude'] = NULL;
             // $param['longitude'] = NULL;

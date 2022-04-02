@@ -32,6 +32,10 @@ class Player extends Model
             $params['driver'] = $request->driver;
         }
 
+        if($request->order != NULL && $request->order != $currPlayer->order) {
+            $params['order'] = $request->order;
+        }
+
         if($request->map != $currPlayer->map) {
             $params['map'] = $request->map;
 

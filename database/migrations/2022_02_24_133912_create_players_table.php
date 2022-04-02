@@ -16,6 +16,7 @@ class CreatePlayersTable extends Migration
             $table->string('state')->nullable();        // ---、未、手配、済
             $table->text('map')->nullable();
             $table->string('driver')->nullable();
+            $table->unsignedInteger('order')->nullable();
 
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
