@@ -12,9 +12,9 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => '池野', 'capacity' => 4],
-                ['name' => 'もとこ', 'capacity' => 4],
-                ['name' => '木内', 'capacity' => 4],
+                ['name' => '池野', 'capacity' => 5],
+                ['name' => 'もとこ', 'capacity' => 1],
+                ['name' => '木内', 'capacity' => 8],
                 ['name' => '倉井', 'capacity' => 4],
                 ['name' => '倉上', 'capacity' => 4],
                 ['name' => '斎藤和美', 'capacity' => 4],
