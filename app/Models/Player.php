@@ -27,7 +27,12 @@ class Player extends Model
         $params = [];
         $dist_array = [];
 
-        $currPlayer = Player::where('id', $request->id)->first();
+        $currPlayer = NULL;
+        if($request->id){
+            $currPlayer = Player::where('id', $request->id)->first();
+        }else if($request->compId){
+            $currPlayer = Player::where('comp_id', $request->comp_id)->first();
+        }
 
         if($request->state != NULL && $request->state != $currPlayer->state) {
             $params['state'] = $request->state;

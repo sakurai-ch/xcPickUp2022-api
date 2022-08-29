@@ -11,8 +11,9 @@ class CreatePlayersTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('no');
+            $table->unsignedInteger('comp_id');
             $table->string('name');
-            $table->string('glider_type')->nullable();  // Hang、Para、Rigid
+            $table->string('glider_type')->nullable();  // Ⅰ、Ⅳ、Ⅴ
             $table->string('state')->nullable();        // ---、未、手配、済
             $table->text('map')->nullable();
             $table->string('driver')->nullable();
