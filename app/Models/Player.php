@@ -30,7 +30,7 @@ class Player extends Model
         $currPlayer = NULL;
         if($request->id){
             $currPlayer = Player::where('id', $request->id)->first();
-        }else if($request->compId){
+        }else if($request->comp_id){
             $currPlayer = Player::where('comp_id', $request->comp_id)->first();
         }
 
@@ -75,7 +75,7 @@ class Player extends Model
             if($request->id){
                 Player::where('id', $request->id)
                     ->update($params);
-            }else if($request->compId){
+            }else if($request->comp_id){
                 Player::where('comp_id', $request->comp_id)
                     ->update($params);
             }
@@ -84,7 +84,7 @@ class Player extends Model
         $updatedPlayer = NULL;
         if($request->id){
             $updatedPlayer = Player::where('id', $request->id)->first();
-        }else if($request->compId){
+        }else if($request->comp_id){
             $updatedPlayer = Player::where('comp_id', $request->comp_id)->first();
         }
         return $updatedPlayer;
