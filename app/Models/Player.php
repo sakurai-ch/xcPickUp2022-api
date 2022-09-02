@@ -71,10 +71,22 @@ class Player extends Model
 
         if($params!=[]){
             $params['updated_at'] = Carbon::now();
-            Player::where('id', $request->id)
-                ->update($params);
+
+            if($request->id){
+                Player::where('id', $request->id)
+                    ->update($params);
+            }else if($request->compId){
+                Player::where('comp_id', $request->comp_id)
+                    ->update($params);
+            }
         }
-        $updatedPlayer = Player::where('id', $request->id)->first();
+
+        $updatedPlayer = NULL;
+        if($request->id){
+            $updatedPlayer = Player::where('id', $request->id)->first();
+        }else if($request->compId){
+            $updatedPlayer = Player::where('comp_id', $request->comp_id)->first();
+        }
         return $updatedPlayer;
     }
 
