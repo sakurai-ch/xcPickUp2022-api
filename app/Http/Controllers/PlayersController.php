@@ -24,9 +24,16 @@ class PlayersController extends Controller
     public function putPlayer(Request $request)
     {
         $updatedPlayer = Player::putPlayer($request);
-        return response()->json([
-            'message' => 'Players updated successfully',
-            'data' => $updatedPlayer
-        ], 200);
+
+        if($updatedPlayer){
+            return response()->json([
+                'message' => 'Players updated successfully',
+                'data' => $updatedPlayer
+            ], 200);
+        }else{
+            return response()->json([
+                'message' => 'error',
+            ], 400);
+        }
     }
 }

@@ -33,6 +33,9 @@ class Player extends Model
         }else if($request->comp_id){
             $currPlayer = Player::where('comp_id', $request->comp_id)->first();
         }
+        if(!$currPlayer){
+            return Null;
+        }
 
         if($request->state != NULL && $request->state != $currPlayer->state) {
             $params['state'] = $request->state;
