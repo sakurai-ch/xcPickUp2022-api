@@ -111,7 +111,8 @@ class Player extends Model
     {
         $north_latitude = null;
         $east_longitude = null;
-        if (preg_match('/[3][5-9]\.[0-9]{2,}/', $text, $matches)) {
+        // if (preg_match('/[3][5-9]\.[0-9]{2,}/', $text, $matches)) {
+        if (preg_match('/[34][0-9]\.[0-9]{2,}/', $text, $matches)) {
             $north_latitude = $matches[0];
         }
         if (preg_match('/[1][34][01289]\.[0-9]{2,}/', $text, $matches)) {
