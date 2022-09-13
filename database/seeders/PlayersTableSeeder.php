@@ -81,14 +81,14 @@ class PlayersTableSeeder extends Seeder
             ['no' =>  89, 'comp_id' => 69, 'name' => '岩本 晃治', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  91, 'comp_id' => 70, 'name' => '岩谷 勝弘', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  92, 'comp_id' => 71, 'name' => '宮田 清和', 'glider_type' => 'Ⅳ', 'state' => '---'],
-            ['no' =>  102, 'comp_id' => 72, 'name' => '前川 克哉', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  103, 'comp_id' => 73, 'name' => '大渕 勲', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  122, 'comp_id' => 74, 'name' => '田邊 万作', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  123, 'comp_id' => 75, 'name' => 'Jeffry Seals', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  124, 'comp_id' => 76, 'name' => '梅岡 翔吾', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  701, 'comp_id' => 77, 'name' => 'Seokju Hur', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  801, 'comp_id' => 78, 'name' => '予備1', 'glider_type' => 'Ⅳ', 'state' => ''],
-            ['no' =>  802, 'comp_id' => 79, 'name' => '予備2', 'glider_type' => 'Ⅳ', 'state' => ''],            
+            ['no' =>  102, 'comp_id' => 72, 'name' => '前川 克哉', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  103, 'comp_id' => 73, 'name' => '大渕 勲', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  122, 'comp_id' => 74, 'name' => '田邊 万作', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  123, 'comp_id' => 75, 'name' => 'Jeffry Seals', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  124, 'comp_id' => 76, 'name' => '梅岡 翔吾', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  701, 'comp_id' => 77, 'name' => 'Seokju Hur', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  801, 'comp_id' => 78, 'name' => '予備1', 'glider_type' => 'Ⅳ', 'state' => '---'],
+            ['no' =>  802, 'comp_id' => 79, 'name' => '予備2', 'glider_type' => 'Ⅳ', 'state' => '---'],            
         ];
 
         $now = Carbon::now();
