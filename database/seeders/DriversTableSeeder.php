@@ -12,17 +12,7 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => '池野', 'capacity' => 5],
-                ['name' => 'もとこ', 'capacity' => 1],
-                ['name' => '木内', 'capacity' => 8],
-                ['name' => '倉井', 'capacity' => 4],
-                ['name' => '倉上', 'capacity' => 4],
-                ['name' => '斎藤和美', 'capacity' => 4],
-                ['name' => '斉まき', 'capacity' => 4],
-                ['name' => '園部', 'capacity' => 4],
-                ['name' => '田中', 'capacity' => 4],
-                ['name' => 'ダニエル', 'capacity' => 4],
-                ['name' => '徳永', 'capacity' => 4],
+                // ['name' => '', 'capacity' => 0],
             ];
 
         $now = Carbon::now();
