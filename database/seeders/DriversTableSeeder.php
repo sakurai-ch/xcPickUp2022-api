@@ -17,10 +17,12 @@ class DriversTableSeeder extends Seeder
                 ['name' => '五位渕', 'capacity' => 8],
                 ['name' => '生井', 'capacity' => 8],
                 ['name' => '山本', 'capacity' => 4],
-                ['name' => '哲也', 'capacity' => 4],
+                ['name' => '大石', 'capacity' => 4],
                 ['name' => 'B1清水', 'capacity' => 15],
-                ['name' => 'B2大沢', 'capacity' => 15],
-                ['name' => 'GL', 'capacity' => 80],
+                ['name' => 'B2堀', 'capacity' => 15],
+                ['name' => 'GL', 'capacity' => 0],
+                ['name' => 'ML', 'capacity' => 0],
+                ['name' => 'DNF', 'capacity' => 0],
             ];
 
         $now = Carbon::now();
