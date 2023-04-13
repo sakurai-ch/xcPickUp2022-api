@@ -26,6 +26,17 @@ class Driver extends Model
         return $createdDriver;
     }
 
+    public static function putDriver(Request $request)
+    {
+        Driver::where('id', $request->id)
+            ->update([
+                'name' => $request->name,
+                'capacity' => $request->capacity,
+                'updated_at' => Carbon::now(),
+            ]);
+        $createdDriver = Driver::find($request->id);
+        return $createdDriver;
+    }
     protected $fillable = [
         'name',
         'capacity',

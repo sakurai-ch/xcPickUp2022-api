@@ -24,4 +24,13 @@ class DriversController extends Controller
             'data' => $createdDriver
         ], 200);
     }
+    
+    public function putDriver(Request $request)
+    {
+        $updatedDriver = Driver::putDriver($request);
+        return response()->json([
+            'message' => 'Driver updated successfully',
+            'data' => $updatedDriver
+        ], 200);
+    }
 }
