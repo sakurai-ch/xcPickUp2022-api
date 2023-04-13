@@ -12,12 +12,10 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => '研斗', 'capacity' => 4],
-                ['name' => '川浪', 'capacity' => 9],
-                ['name' => '五位渕', 'capacity' => 8],
-                ['name' => '生井', 'capacity' => 8],
-                ['name' => '山本', 'capacity' => 4],
-                ['name' => '大石', 'capacity' => 4],
+                ['name' => '杉山', 'capacity' => 8],
+                ['name' => '小山', 'capacity' => 7],
+                ['name' => '大塚', 'capacity' => 0],
+                ['name' => '池野', 'capacity' => 5],
                 ['name' => 'B1清水', 'capacity' => 15],
                 ['name' => 'B2堀', 'capacity' => 15],
                 ['name' => 'GL', 'capacity' => 0],
