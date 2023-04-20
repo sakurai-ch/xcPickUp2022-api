@@ -12,15 +12,20 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => '杉山', 'capacity' => 8],
-                ['name' => '小山', 'capacity' => 7],
-                ['name' => '大塚', 'capacity' => 0],
-                ['name' => '池野', 'capacity' => 5],
-                ['name' => 'B1清水', 'capacity' => 15],
-                ['name' => 'B2堀', 'capacity' => 15],
-                ['name' => 'GL', 'capacity' => 0],
-                ['name' => 'ML', 'capacity' => 0],
-                ['name' => 'DNF', 'capacity' => 0],
+                ['name' => '倉井（OBバン）8人/8本', 'capacity' => 8],
+                ['name' => '斉まき（岩崎ウイッシュ）5人/8本', 'capacity' => 5],
+                ['name' => '土田（松田レヴォーグ）4人/7本', 'capacity' => 4],
+                ['name' => '北山（塩野カー）4人/8本', 'capacity' => 4],
+                ['name' => '徳永（徳永カー）4人/8本', 'capacity' => 4],
+                ['name' => '堀（濱田カー）5人/8本', 'capacity' => 5],
+                ['name' => '杉山（佐々木カー）4人/7本', 'capacity' => 4],
+                ['name' => 'ダニエル・土（ダニエルカー）3人/3本 ', 'capacity' => 3],
+                ['name' => '中嶋・土（大陽カー）4人/6本', 'capacity' => 4],
+                ['name' => '斎たつや・日（斎藤カー）5人/5本 ', 'capacity' => 5],
+                ['name' => '浅田・日（大陽カー）4人/6本', 'capacity' => 4],
+                ['name' => '自己回収', 'capacity' => 70],
+                ['name' => 'ML', 'capacity' => 70],
+                ['name' => 'DNF', 'capacity' => 70],
             ];
 
         $now = Carbon::now();
