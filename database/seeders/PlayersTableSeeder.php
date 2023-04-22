@@ -62,7 +62,6 @@ class PlayersTableSeeder extends Seeder
             ['no' =>  50, 'comp_id' => 50, 'name' => '橋本　耕一', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  51, 'comp_id' => 51, 'name' => '橋本雅男', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  52, 'comp_id' => 52, 'name' => '馬場峻司', 'glider_type' => 'Ⅰ', 'state' => '---'],
-            ['no' =>  53, 'comp_id' => 53, 'name' => '濱田　革', 'glider_type' => 'Ⅴ', 'state' => '---'],
             ['no' =>  54, 'comp_id' => 54, 'name' => '早坂真有美', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  55, 'comp_id' => 55, 'name' => '星合 智子', 'glider_type' => 'Ⅳ', 'state' => '---'],
             ['no' =>  56, 'comp_id' => 56, 'name' => '前川 仁', 'glider_type' => 'Ⅳ', 'state' => '---'],
