@@ -25,7 +25,7 @@ class FlymasterController extends Controller
             }
             foreach($flymasterData as $flymaster){
                 if( $flymaster['COMPE_id'] != $player->comp_id ||
-                    $flymaster['lastseen'] < $today ||
+                    // $flymaster['lastseen'] < $today ||
                     $flymaster['report_back'] <= 3 ||
                     $flymaster['report_back'] >= 7
                 ){
