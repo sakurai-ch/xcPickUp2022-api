@@ -11,6 +11,7 @@ use Exception;
 class Player extends Model
 {
     public static function getPlayers() {
+        // updatePlayers();
         $players = Player::orderBy('no', 'asc')->get();
         return $players;
     }
@@ -91,6 +92,35 @@ class Player extends Model
             $updatedPlayer = Player::where('comp_id', $request->comp_id)->first();
         }
         return $updatedPlayer;
+    }
+
+    public static function putPlayerFromFlymaster($flymaster)
+    {
+        if( !$flymaster['COMPE_id'] || !$flymaster['latitude'] || !$flymaster['longitude'] ){
+            return Null;
+        }
+
+        $TOLat = 36.276836;
+        $TOLng = 140.145818;
+        $params = [];
+        $dist_array = [];
+
+        $lat = (float)($flymaster['latitude']);
+        $lng = (float)($flymaster['longitude']);
+        $dist_array = Player::measure_distance($TOLat, $TOLng, $lat, $lng);
+        $mapUrl = "https://maps.google.com/?q=" . $lat . "," . $lng;
+        
+        $params['latitude'] = $lat;
+        $params['longitude'] = $lng;
+        $params['distance'] = round($dist_array['dist']);
+        $params['direction'] = $dist_array['dir'];
+        $params['map'] = $mapUrl;
+        $params['state'] = '未';
+        $params['updated_at'] = Carbon::now();
+
+        $result = Player::where('comp_id', $flymaster['COMPE_id'])
+            ->update($params);
+        return $result;
     }
 
     public static function post_marker($request)
