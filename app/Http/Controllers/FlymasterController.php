@@ -11,7 +11,7 @@ class FlymasterController extends Controller
 {
     public function getFlymaster()
     {
-        $groupId = "5606";
+        $groupId = "5702";
 
         $curPlayers = Player::getPlayers();
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
