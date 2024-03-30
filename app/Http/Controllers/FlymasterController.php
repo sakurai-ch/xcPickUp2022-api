@@ -17,7 +17,7 @@ class FlymasterController extends Controller
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
             ->json($key = null);
 
-        $today = Carbon::today();
+        $today = Carbon::today('Asia/Tokyo');
 
         foreach($curPlayers as $player){
             if($player->map){
