@@ -17,7 +17,7 @@ class FlymasterController extends Controller
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
             ->json($key = null);
 
-        $today = Carbon::today('Asia/Tokyo');
+        // $today = Carbon::today('Asia/Tokyo');
 
         foreach($curPlayers as $player){
             if($player->map){
@@ -25,7 +25,8 @@ class FlymasterController extends Controller
             }
             foreach($flymasterData as $flymaster){
                 if( $flymaster['COMPE_id'] != $player->comp_id ||
-                    $flymaster['lastseen'] < $today ||
+                    // $flymaster['lastseen'] < $today ||
+                    $flymaster['lastseen'] <= ($player->updated_at)->format('Y-m-d H:i:s') ||
                     $flymaster['report_back'] <= 3 ||
                     $flymaster['report_back'] >= 7
                 ){
