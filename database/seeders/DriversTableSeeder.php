@@ -12,16 +12,16 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => '清水4（4人）', 'capacity' => 4],
-                ['name' => '小山1（8人）', 'capacity' => 8],
-                ['name' => '大塚2（8人）', 'capacity' => 8],
-                ['name' => '中里5（8人）', 'capacity' => 8],
-                ['name' => '杉山3（8人）', 'capacity' => 8],
-                ['name' => '堀（26人）', 'capacity' => 26],
-                ['name' => 'GL', 'capacity' => 70],
-                ['name' => 'ML', 'capacity' => 70],
-                ['name' => 'ABS', 'capacity' => 70],
-                ['name' => '帰着', 'capacity' => 70],
+                ['name' => 'たつや（4人/5本）', 'capacity' => 4],
+                ['name' => 'かずみ（4人/7本）', 'capacity' => 4],
+                ['name' => '徳永（5人/8本）', 'capacity' => 5],
+                ['name' => '北山（4人/6本）', 'capacity' => 4],
+                ['name' => '倉井（8人/8人）', 'capacity' => 8],
+                ['name' => '中西（4人/8本/土のみ）', 'capacity' => 4],
+                ['name' => '園部（4人/8本/日のみ）', 'capacity' => 4],
+                ['name' => 'ML', 'capacity' => 41],
+                ['name' => 'ABS', 'capacity' => 41],
+                ['name' => '帰着', 'capacity' => 41],
             ];
 
         $now = Carbon::now();

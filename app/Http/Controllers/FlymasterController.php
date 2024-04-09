@@ -11,11 +11,15 @@ class FlymasterController extends Controller
 {
     public function getFlymaster()
     {
-        $groupId = "5740";  // 2024 J1
+        $groupId = "5763";  // 2024 どじからす
 
         $curPlayers = Player::getPlayers();
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
             ->json($key = null);
+
+        // TODO DBに大会名とIDを登録する
+        // TODO パラメータを追加して取得時に絞る
+        // TODO ドライバー画面から現在値を見られるようにする
 
         // $today = Carbon::today('Asia/Tokyo');
 
