@@ -12,14 +12,11 @@ class FlymasterController extends Controller
     public function getFlymaster()
     {
         $groupId = "5763";  // 2024 どじからす
+        // TODO DBに大会名とIDを登録する
 
         $curPlayers = Player::getPlayers();
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
             ->json($key = null);
-
-        // TODO DBに大会名とIDを登録する
-        // TODO パラメータを追加して取得時に絞る
-        // TODO ドライバー画面から現在値を見られるようにする
 
         // $today = Carbon::today('Asia/Tokyo');
 
@@ -42,5 +39,22 @@ class FlymasterController extends Controller
 
         $updatedPlayers = Player::getPlayers();
         return $updatedPlayers;
+    }
+
+    public function getCurMap(Request $request)
+    {
+        $groupId = "5763";  // 2024 どじからす
+
+        $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1&rb=0')
+            ->json($key = null);
+
+        foreach($flymasterData as $flymaster){
+            if( $flymaster['COMPE_id'] == $request->compId){
+                $curMapUrl = 'https://maps.google.com/maps?q=' . $flymaster['latitude'] . ',' . $flymaster['longitude'];
+                break;
+            }
+        }
+
+        return $curMapUrl;
     }
 }

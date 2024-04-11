@@ -16,7 +16,7 @@ class DriversTableSeeder extends Seeder
                 ['name' => 'かずみ（4人/7本）', 'capacity' => 4],
                 ['name' => '徳永（5人/8本）', 'capacity' => 5],
                 ['name' => '北山（4人/6本）', 'capacity' => 4],
-                ['name' => '倉井（8人/8人）', 'capacity' => 8],
+                ['name' => '倉井（8人/8本）', 'capacity' => 8],
                 ['name' => '中西（4人/8本/土のみ）', 'capacity' => 4],
                 ['name' => '園部（4人/8本/日のみ）', 'capacity' => 4],
                 ['name' => 'ML', 'capacity' => 41],
