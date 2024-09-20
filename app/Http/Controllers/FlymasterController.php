@@ -11,7 +11,8 @@ class FlymasterController extends Controller
 {
     public function getFlymaster()
     {
-        $groupId = "5763";  // 2024 どじからす
+        $groupId = "6253";  // 2024 J1 日本選手権
+        // 大会ごとに2個所修正
         // TODO DBに大会名とIDを登録する
 
         $curPlayers = Player::getPlayers();
@@ -43,7 +44,9 @@ class FlymasterController extends Controller
 
     public function getCurMap(Request $request)
     {
-        $groupId = "5763";  // 2024 どじからす
+        $groupId = "6253";  // 2024 J1 日本選手権
+        // 大会ごとに2個所修正
+        // TODO DBに大会名とIDを登録する
 
         $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1&rb=0')
             ->json($key = null);
