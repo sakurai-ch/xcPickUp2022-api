@@ -15,8 +15,13 @@ class FlymasterController extends Controller
         // 大会ごとに2個所修正
         // TODO DBに大会名とIDを登録する
 
+        $url = env('FLYMASTER_URL');
+        $user = env('FLYMASTER_USER');
+        $pwd = md5(env('FLYMASTER_PWD'));
+        $json = 1;
+
         $curPlayers = Player::getPlayers();
-        $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1')
+        $flymasterData = Http::get($url . '?user=' . $user . '&pwd=' . $pwd . '&grpid=' . $groupId . '&json=' . $json)
             ->json($key = null);
 
         // $today = Carbon::today('Asia/Tokyo');
@@ -48,7 +53,13 @@ class FlymasterController extends Controller
         // 大会ごとに2個所修正
         // TODO DBに大会名とIDを登録する
 
-        $flymasterData = Http::get('https://wlb.flymaster.net/get_trackers_pos.php?grpid=' . $groupId . '&json=1&rb=0')
+        $url = env('FLYMASTER_URL');
+        $user = env('FLYMASTER_USER');
+        $pwd = md5(env('FLYMASTER_PWD'));
+        $json = 1;
+        $rb = 0;
+
+        $flymasterData = Http::get($url . '?user=' . $user . '&pwd=' . $pwd . '&grpid=' . $groupId . '&json=' . $json . '&rb=' . $rb)
             ->json($key = null);
 
         foreach($flymasterData as $flymaster){
