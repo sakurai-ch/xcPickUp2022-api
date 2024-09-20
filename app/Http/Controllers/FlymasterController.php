@@ -11,17 +11,14 @@ class FlymasterController extends Controller
 {
     public function getFlymaster()
     {
-        $groupId = "6253";  // 2024 J1 日本選手権
-        // 大会ごとに2個所修正
-        // TODO DBに大会名とIDを登録する
-
+        // 大会ごとに.envのTOKEN、GROUPIDを設定
         $url = env('FLYMASTER_URL');
-        $user = env('FLYMASTER_USER');
-        $pwd = md5(env('FLYMASTER_PWD'));
+        $token = env('FLYMASTER_TOKEN');
+        $groupId = env('FLYMASTER_GROUPID');
         $json = 1;
 
         $curPlayers = Player::getPlayers();
-        $flymasterData = Http::get($url . '?user=' . $user . '&pwd=' . $pwd . '&grpid=' . $groupId . '&json=' . $json)
+        $flymasterData = Http::get($url . '?token=' . $token . '&grpid=' . $groupId . '&json=' . $json)
             ->json($key = null);
 
         // $today = Carbon::today('Asia/Tokyo');
@@ -49,19 +46,17 @@ class FlymasterController extends Controller
 
     public function getCurMap(Request $request)
     {
-        $groupId = "6253";  // 2024 J1 日本選手権
-        // 大会ごとに2個所修正
-        // TODO DBに大会名とIDを登録する
-
+        // 大会ごとに.envのTOKEN、GROUPIDを設定
         $url = env('FLYMASTER_URL');
-        $user = env('FLYMASTER_USER');
-        $pwd = md5(env('FLYMASTER_PWD'));
+        $token = env('FLYMASTER_TOKEN');
+        $groupId = env('FLYMASTER_GROUPID');
         $json = 1;
         $rb = 0;
 
-        $flymasterData = Http::get($url . '?user=' . $user . '&pwd=' . $pwd . '&grpid=' . $groupId . '&json=' . $json . '&rb=' . $rb)
+        $flymasterData = Http::get($url . '?token=' . $token . '&grpid=' . $groupId . '&json=' . $json . '&rb=' . $rb)
             ->json($key = null);
 
+        $curMapUrl = '';
         foreach($flymasterData as $flymaster){
             if( $flymaster['COMPE_id'] == $request->compId){
                 $curMapUrl = 'https://maps.google.com/maps?q=' . $flymaster['latitude'] . ',' . $flymaster['longitude'];
