@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
+use App\Models\Competition;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 
@@ -11,11 +12,12 @@ class FlymasterController extends Controller
 {
     public function getFlymaster()
     {
-        // 大会ごとに.envのTOKEN、GROUPIDを設定
         $url = env('FLYMASTER_URL');
-        $token = env('FLYMASTER_TOKEN');
-        $groupId = env('FLYMASTER_GROUPID');
         $json = 1;
+
+        $competition = Competition::getLastCompetition();
+        $token = $competition -> token;
+        $groupId = $competition -> group_id;
 
         $curPlayers = Player::getPlayers();
         $flymasterData = Http::get($url . '?token=' . $token . '&grpid=' . $groupId . '&json=' . $json)
