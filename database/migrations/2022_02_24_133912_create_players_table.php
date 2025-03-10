@@ -13,7 +13,7 @@ class CreatePlayersTable extends Migration
             $table->unsignedInteger('no');
             $table->unsignedInteger('comp_id');
             $table->string('name');
-            $table->string('glider_type')->nullable();  // Ⅰ、Ⅳ、Ⅴ
+            $table->string('glider_type')->nullable();  // Ⅰ、Ⅲ、Ⅴ
             $table->string('state')->nullable();        // ---、未、配車、済
             $table->text('map')->nullable();
             $table->string('driver')->nullable();

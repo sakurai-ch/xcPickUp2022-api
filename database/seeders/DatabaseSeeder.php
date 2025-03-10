@@ -10,5 +10,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DriversTableSeeder::class);
         $this->call(PlayersTableSeeder::class);
+        $this->call(CompetitionSeeder::class);
     }
 }
