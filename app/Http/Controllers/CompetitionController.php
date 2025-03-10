@@ -16,4 +16,13 @@ class CompetitionController extends Controller
             'data' => $competition -> name,
         ], 200);
     }
+
+    public function postCompetition(Request $request)
+    {
+        $competition = Competition::postCompetition($request);
+        return response()->json([
+            'message' => 'Competition got successfully',
+            'data' => $competition,
+        ], 200);
+    }
 }

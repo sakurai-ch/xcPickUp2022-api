@@ -15,6 +15,7 @@ Route::put('/v1/drivers', [DriversController::class, 'putDriver']);
 Route::get('/v1/flymaster', [FlymasterController::class, 'getFlymaster']);
 Route::get('/v1/curMap', [FlymasterController::class, 'getCurMap']);
 Route::get('/v1/competition', [CompetitionController::class, 'getCompetition']);
+Route::post('/v1/competition', [CompetitionController::class, 'postCompetition']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
