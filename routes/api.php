@@ -8,6 +8,7 @@ use App\Http\Controllers\FlymasterController;
 use App\Http\Controllers\CompetitionController;
 
 Route::get('/v1/players', [PlayersController::class, 'getPlayers']);
+Route::post('/v1/players', [PlayersController::class, 'postPlayers']);
 Route::put('/v1/players', [PlayersController::class, 'putPlayer']);
 Route::get('/v1/drivers', [DriversController::class, 'getDrivers']);
 Route::post('/v1/drivers', [DriversController::class, 'postDriver']);

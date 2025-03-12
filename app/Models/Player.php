@@ -21,6 +21,24 @@ class Player extends Model
         return $sortedPlayers;
     }
 
+    public static function createPlayers($players) {
+        Player::truncate();
+
+        $now = Carbon::now();
+        foreach ($players as $player) {
+            $player['state'] = '---';
+            $player['map'] = '';
+            $player['driver'] = '---';
+            $player['created_at'] = $now;
+            $player['updated_at'] = $now;
+
+            Player::insert($player);
+        }
+
+        $createdPlayer = Player::orderBy('no', 'asc')->get();
+        return $createdPlayer;
+    }
+
     public static function putPlayer(Request $request) {
         $TOLat = 36.276836;
         $TOLng = 140.145818;

@@ -21,6 +21,22 @@ class PlayersController extends Controller
         ], 200);
     }
 
+    public function postPlayers(Request $request)
+    {
+        $createdPlayers = Player::createPlayers($request->players);
+
+        if($createdPlayers){
+            return response()->json([
+                'message' => 'Players created successfully',
+                'data' => $createdPlayers
+            ], 200);
+        }else{
+            return response()->json([
+                'message' => 'error',
+            ], 400);
+        }
+    }
+
     public function putPlayer(Request $request)
     {
         $updatedPlayer = Player::putPlayer($request);
