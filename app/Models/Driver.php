@@ -37,6 +37,14 @@ class Driver extends Model
         $createdDriver = Driver::find($request->id);
         return $createdDriver;
     }
+
+    public static function deleteDriver(Request $request)
+    {
+        $deletedCount = Driver::where('id', $request->id)
+                        ->delete();
+        return $deletedCount;
+    }
+
     protected $fillable = [
         'name',
         'capacity',

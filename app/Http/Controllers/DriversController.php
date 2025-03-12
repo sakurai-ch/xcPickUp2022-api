@@ -33,4 +33,13 @@ class DriversController extends Controller
             'data' => $updatedDriver
         ], 200);
     }
+    
+    public function deleteDriver(Request $request)
+    {
+        $deletedCount = Driver::deleteDriver($request);
+        return response()->json([
+            'message' => 'Driver deleteed successfully',
+            'data' => $deletedCount
+        ], 200);
+    }
 }
