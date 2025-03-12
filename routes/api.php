@@ -10,6 +10,7 @@ use App\Http\Controllers\CompetitionController;
 Route::get('/v1/players', [PlayersController::class, 'getPlayers']);
 Route::post('/v1/players', [PlayersController::class, 'postPlayers']);
 Route::put('/v1/players', [PlayersController::class, 'putPlayer']);
+Route::put('/v1/playersPositon', [PlayersController::class, 'resetPlayersPositon']);
 Route::get('/v1/drivers', [DriversController::class, 'getDrivers']);
 Route::post('/v1/driver', [DriversController::class, 'postDriver']);
 Route::put('/v1/driver', [DriversController::class, 'putDriver']);

@@ -52,4 +52,20 @@ class PlayersController extends Controller
             ], 400);
         }
     }
+
+    public function resetPlayersPositon()
+    {
+        $resetPlayers = Player::resetPlayersPositon();
+
+        if($resetPlayers){
+            return response()->json([
+                'message' => 'Players reset successfully',
+                'data' => $resetPlayers
+            ], 200);
+        }else{
+            return response()->json([
+                'message' => 'error',
+            ], 400);
+        }
+    }
 }

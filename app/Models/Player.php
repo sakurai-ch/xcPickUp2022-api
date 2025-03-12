@@ -219,6 +219,24 @@ class Player extends Model
         return [ 'dist' => $dist, 'dir' => $dir ];
     }
 
+    public static function resetPlayersPositon() {
+        $now = Carbon::now();
+
+        $params['state'] = '---';
+        $params['map'] = '';
+        $params['driver'] = '---';
+        $params['order'] = null;
+        $params['latitude'] = null;
+        $params['longitude'] = null;
+        $params['distance'] = null;
+        $params['direction'] = null;
+        $params['updated_at'] = Carbon::now();
+        Player::query()->update($params);
+
+        $resetPlayers = Player::orderBy('no', 'asc')->get();
+        return $resetPlayers;
+    }
+
     protected $fillable = [
         'state',
         'map',
