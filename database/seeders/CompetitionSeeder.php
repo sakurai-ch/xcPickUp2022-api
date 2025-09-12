@@ -21,6 +21,7 @@ class CompetitionSeeder extends Seeder
                     'name' => 'competition name sample', 
                     'group_id' => 1000, 
                     'token' => 'tokenSample', 
+                    'reference_point_id' => 0,
                 ],
             ];
 

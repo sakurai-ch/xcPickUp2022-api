@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Competition;
+use App\Models\ReferencePoint;
 
 class CompetitionController extends Controller
 {
@@ -23,6 +24,15 @@ class CompetitionController extends Controller
         return response()->json([
             'message' => 'Competition got successfully',
             'data' => $competition,
+        ], 200);
+    }
+
+    public function getReferencePoints()
+    {
+        $referencePoints = ReferencePoint::getReferencePoints();
+        return response()->json([
+            'message' => 'Reference points got successfully',
+            'data' => $referencePoints,
         ], 200);
     }
 }

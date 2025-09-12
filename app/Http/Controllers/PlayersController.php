@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
+use App\Models\Competition;
+use App\Models\ReferencePoint;
 
 class PlayersController extends Controller
 {
@@ -39,7 +41,9 @@ class PlayersController extends Controller
 
     public function putPlayer(Request $request)
     {
-        $updatedPlayer = Player::putPlayer($request);
+        $competition = Competition::getLastCompetition();
+        $referencePoint = ReferencePoint::getReferencePoint($competition->reference_point_id);
+        $updatedPlayer = Player::putPlayer($request, $referencePoint);
 
         if($updatedPlayer){
             return response()->json([

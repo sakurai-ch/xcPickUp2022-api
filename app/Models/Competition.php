@@ -21,6 +21,7 @@ class Competition extends Model
             'name' => $competition -> name | ' ', 
             'group_id' => $competition -> groupId | 0, 
             'token' => $competition -> token | ' ', 
+            'reference_point_id' => $competition -> referencePointId | 0, 
             'created_at' => $now, 
             'updated_at' => $now,
         ]);
@@ -34,6 +35,7 @@ class Competition extends Model
         'name',
         'group_id',
         'token',
+        'reference_point_id',
     ];
 
     // use HasFactory;

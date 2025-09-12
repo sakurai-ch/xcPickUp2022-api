@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Player;
 use App\Models\Competition;
+use App\Models\ReferencePoint;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 
@@ -19,6 +20,7 @@ class FlymasterController extends Controller
         $token = $competition -> token;
         $groupId = $competition -> group_id;
 
+        $referencePoint = ReferencePoint::getReferencePoint($competition->reference_point_id);
         $curPlayers = Player::getPlayers();
         $flymasterData = Http::get($url . '?token=' . $token . '&grpid=' . $groupId . '&json=' . $json)
             ->json($key = null);
@@ -32,13 +34,13 @@ class FlymasterController extends Controller
             foreach($flymasterData as $flymaster){
                 if( $flymaster['COMPE_id'] != $player->comp_id ||
                     // $flymaster['lastseen'] < $today ||
-                    $flymaster['lastseen'] <= ($player->updated_at)->format('Y-m-d H:i:s') ||
+                    $flymaster['lastseen'] <= ($player->updated_at)->format('Y-m-d H:i:s') ||  // 動作確認時はコメントアウト
                     $flymaster['report_back'] <= 3 ||
                     $flymaster['report_back'] >= 7
                 ){
                     continue;
                 }
-                Player::putPlayerFromFlymaster($flymaster);
+                Player::putPlayerFromFlymaster($flymaster, $referencePoint);
             }
         }
 

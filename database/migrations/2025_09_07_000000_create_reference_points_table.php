@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompetitionsTable extends Migration
+class CreateReferencePointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateCompetitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('competitions', function (Blueprint $table) {
+        Schema::create('reference_points', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedInteger('group_id');
-            $table->string('token');
-            $table->unsignedBigInteger('reference_point_id');
+            $table->double('latitude');
+            $table->double('longitude');
+            $table->boolean('is_deleted');
+            $table->integer('display_order');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
@@ -31,6 +32,6 @@ class CreateCompetitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competitions');
+        Schema::dropIfExists('reference_points');
     }
 }

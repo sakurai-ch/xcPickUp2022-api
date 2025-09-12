@@ -39,9 +39,9 @@ class Player extends Model
         return $createdPlayer;
     }
 
-    public static function putPlayer(Request $request) {
-        $TOLat = 36.276836;
-        $TOLng = 140.145818;
+    public static function putPlayer(Request $request, $referencePoint) {
+        $TOLat = $referencePoint->latitude;
+        $TOLng = $referencePoint->longitude;
         
         $params = [];
         $dist_array = [];
@@ -112,14 +112,14 @@ class Player extends Model
         return $updatedPlayer;
     }
 
-    public static function putPlayerFromFlymaster($flymaster)
+    public static function putPlayerFromFlymaster($flymaster, $referencePoint)
     {
         if( !$flymaster['COMPE_id'] || !$flymaster['latitude'] || !$flymaster['longitude'] ){
             return Null;
         }
 
-        $TOLat = 36.276836;
-        $TOLng = 140.145818;
+        $TOLat = $referencePoint->latitude;
+        $TOLng = $referencePoint->longitude;
         $params = [];
         $dist_array = [];
 
