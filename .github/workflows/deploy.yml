@@ -13,6 +13,8 @@ jobs:
       # コードをチェックアウト
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # SSH経由でLightsailにコマンド実行
       - name: Deploy via SSH
