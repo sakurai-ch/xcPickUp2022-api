@@ -12,7 +12,7 @@ class DriversTableSeeder extends Seeder
     {
         $params =
             [
-                ['name' => 'driver name', 'capacity' => 0],
+                ['name' => 'driver sample', 'capacity' => 0],
                 // ['name' => 'ML', 'capacity' => 100],
                 // ['name' => 'ABS', 'capacity' => 100],
                 // ['name' => 'returned', 'capacity' => 100],

@@ -34,6 +34,15 @@ class ReferencePointsSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => '吉野川TO(水の丸)',
+                'latitude' => 33.991833,
+                'longitude' => 133.964361,
+                'is_deleted' => false,
+                'display_order' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
