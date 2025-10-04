@@ -1,0 +1,31 @@
+name: Deploy to Lightsail
+
+# masterブランチにpushされたら実行
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # コードをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # SSH経由でLightsailにコマンド実行
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            cd /var/www/html/xcPickUp2022-api
+            git fetch origin master
+            git reset --hard origin/master
+            composer install --no-dev --optimize-autoloader
+            php artisan migrate --force
+            php artisan db:seed --force
+            php artisan cache:clear
