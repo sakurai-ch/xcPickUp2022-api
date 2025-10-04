@@ -27,6 +27,7 @@ jobs:
             cd /var/www/html/xcPickUp2022-api
             git fetch origin master
             git reset --hard origin/master
+            git clean -fd
             composer install --no-dev --optimize-autoloader
             php artisan config:clear
             php artisan cache:clear
